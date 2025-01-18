@@ -7,7 +7,6 @@ import { SignInButton, UserButton } from "@clerk/nextjs";
 import { currentUser } from "@clerk/nextjs/server";
 
 async function DesktopNavbar() {
-
   const user = await currentUser();
 
   return (
@@ -17,7 +16,7 @@ async function DesktopNavbar() {
       <Button variant="ghost" className="flex items-center gap-2" asChild>
         <Link href="/">
           <HomeIcon className="w-4 h-4" />
-          <span className="hidden lg:inline">Home</span>
+          <span className="hidden lg:inline">Inicio</span>
         </Link>
       </Button>
 
@@ -26,7 +25,7 @@ async function DesktopNavbar() {
           <Button variant="ghost" className="flex items-center gap-2" asChild>
             <Link href="/notifications">
               <BellIcon className="w-4 h-4" />
-              <span className="hidden lg:inline">Notifications</span>
+              <span className="hidden lg:inline">Notificaciones</span>
             </Link>
           </Button>
           <Button variant="ghost" className="flex items-center gap-2" asChild>
@@ -37,14 +36,14 @@ async function DesktopNavbar() {
               }`}
             >
               <UserIcon className="w-4 h-4" />
-              <span className="hidden lg:inline">Profile</span>
+              <span className="hidden lg:inline">Perfil</span>
             </Link>
           </Button>
           <UserButton />
         </>
       ) : (
         <SignInButton mode="modal">
-          <Button variant="default">Sign In</Button>
+          <Button variant="default">Iniciar sesión</Button>
         </SignInButton>
       )}
     </div>
