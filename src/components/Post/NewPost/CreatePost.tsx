@@ -2,11 +2,11 @@
 import toast from "react-hot-toast";
 import { useUser } from "@clerk/nextjs";
 import { useState } from "react";
-import { Card, CardContent } from "../ui/card";
-import { Button } from "../ui/button";
 import { ImageIcon, Loader2Icon, SendIcon } from "lucide-react";
-import TextareaPost from "./TextareaPost";
 import { createPost } from "@/actions/post.actions";
+import { Card, CardContent } from "@/components/ui/card";
+import TextareaPost from "./TextareaPost";
+import { Button } from "@/components/ui/button";
 
 function CreatePost() {
   const { user } = useUser();

@@ -1,6 +1,6 @@
+import { Avatar, AvatarImage } from "@/components/ui/avatar";
+import { Textarea } from "@/components/ui/textarea";
 import React from "react";
-import { Avatar, AvatarImage } from "../ui/avatar";
-import { Textarea } from "../ui/textarea";
 
 interface TextareaPostProps {
   post: {
