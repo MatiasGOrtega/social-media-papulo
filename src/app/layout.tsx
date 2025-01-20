@@ -42,7 +42,7 @@ export default function RootLayout({
           >
             <div className="min-h-screen">
               <Navbar />
-              <main className="max-w-7xl mx-auto px-4">
+              <main className="max-w-7xl mx-auto p-4">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
                   <div className="hidden lg:block lg:col-span-3">
                     <Sidebar />
