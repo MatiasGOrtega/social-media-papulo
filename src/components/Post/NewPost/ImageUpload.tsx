@@ -7,7 +7,7 @@ import Image from "next/image";
 interface ImageUploadProps {
   onChange: (url: string) => void;
   value: string;
-  endpoint: "postImage";
+  endpoint: "imageUploader";
 }
 
 function ImageUpload({ endpoint, onChange, value }: ImageUploadProps) {
@@ -32,7 +32,7 @@ function ImageUpload({ endpoint, onChange, value }: ImageUploadProps) {
         onChange(res?.[0].url);
       }}
       onUploadError={(error: Error) => {
-        console.log(error);
+        console.log(`ERROR! ${error.message}`);
       }}
     />
   );

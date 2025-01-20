@@ -7,6 +7,7 @@ import { createPost } from "@/actions/post.actions";
 import { Card, CardContent } from "@/components/ui/card";
 import TextareaPost from "./TextareaPost";
 import { Button } from "@/components/ui/button";
+import ImageUpload from "./ImageUpload";
 
 function CreatePost() {
   const { user } = useUser();
@@ -59,14 +60,16 @@ function CreatePost() {
           {(post.showImageUpload || post.imageUrl) && (
             <div className="border rounded-lg p-4">
               {/* AQUI VA EL FORM PARA CARGAR IMAGEN */}
-              {/* <ImageUpload
-              endpoint="postImage"
-              value={imageUrl}
-              onChange={(url) => {
-                setImageUrl(url);
-                if (!url) setShowImageUpload(false);
-              }}
-            /> */}
+              <ImageUpload
+                endpoint="imageUploader"
+                value={post.imageUrl}
+                onChange={(url) => {
+                  setPost({ ...post, imageUrl: url });
+                  if (!url) {
+                    setPost({ ...post, showImageUpload: false });
+                  }
+                }}
+              />
             </div>
           )}
 
@@ -89,9 +92,7 @@ function CreatePost() {
             <Button
               className="flex items-center"
               onClick={handleSubmit}
-              disabled={
-                (!post.content.trim() && !post.imageUrl) || isPosting
-              }
+              disabled={(!post.content.trim() && !post.imageUrl) || isPosting}
             >
               {isPosting ? (
                 <>

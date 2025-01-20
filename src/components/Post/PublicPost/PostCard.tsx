@@ -14,8 +14,11 @@ import PostImage from "./PostImage";
 import LikeButton from "./LikeButton";
 import ShowCommentsButton from "./ShowCommentsButton";
 
+type Posts = Awaited<ReturnType<typeof getPosts>>;
+type Post = Posts[number];
+
 interface PostCardProps {
-  post: Awaited<ReturnType<typeof getPosts>>[number];
+  post: Post;
   dbUserId: string | null;
 }
 
@@ -89,7 +92,7 @@ function PostCard({ post, dbUserId }: PostCardProps) {
                         </span>
                         <span className="text-sm text-muted-foreground">·</span>
                         <span className="text-sm text-muted-foreground">
-                          {formatDistanceToNow(new Date(comment.createdAt))} ago
+                          {formatDistanceToNow(new Date(comment.createdAt))} atras
                         </span>
                       </div>
                       <p className="text-sm break-words">{comment.content}</p>
